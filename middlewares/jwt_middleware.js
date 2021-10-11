@@ -1,11 +1,14 @@
 const jwt = require('jsonwebtoken');
-const TOKEN_SECRET = require('../consts');
+const TOKEN_SECRET = require('../consts').TOKEN_SECRET;
 
 module.exports.jwtValidate = async (req, res, next) => {
     try {
+        console.log("middleware")
+        console.log(TOKEN_SECRET);
+
         const token = req.header('Authorization');
-        const decoded = jwt.verify(token, TOKEN_SECRET);
-        req.user = decoded;
+        console.log(token)
+        req.user = jwt.verify(token, TOKEN_SECRET);
         next();
     } catch (e) {
         console.log('err with middleware', e);
