@@ -1,0 +1,4 @@
+module.exports.TOKEN_SECRET =
+    '924ce4af5efec064e4ddb904ee4d71f0b20adf735e5d71f86289bfd3d7cc8dcaadeaee6ab1cfde9e1fa1b35957f74c4c796fefb31ef279c4dc474966f052d185';
+module.exports.REF_TOKEN_SECRET =
+    '39632ab0a2112e9dbf6b4bbd9455197e9048ea0f3c15b0bbeed2e2967863fffb4062e8d21aa1303355ed5f969d4eadd41255616de078c235ec3c10f3ac7dfbe4';

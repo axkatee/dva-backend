@@ -6,16 +6,19 @@ const userRoutes = require("./routes/userRoutes");
 const appointmentRoutes = require("./routes/appointmentRoutes");
 
 const mongoose = require('mongoose');
+const jwtMiddleware = require("../middlewares/jwt_middleware");
 const url = 'mongodb+srv://user:user@cluster.gvlln.mongodb.net/doctor-database?retryWrites=true&w=majority';
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = 3000;
 
 app.use(cors());
 app.use(express.json());
 app.use(bodyParser.json());
-app.use('/api/signup', userRoutes);
-app.use('/home', appointmentRoutes);
+
+app.use('/api', userRoutes);
+app.use('/home', jwtMiddleware.jwtValidate, appointmentRoutes);
+
 app.use(bodyParser.urlencoded({
     extended: true
 }));
