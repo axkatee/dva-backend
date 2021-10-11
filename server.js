@@ -6,7 +6,7 @@ const userRoutes = require("./routes/userRoutes");
 const appointmentRoutes = require("./routes/appointmentRoutes");
 
 const mongoose = require('mongoose');
-const jwtMiddleware = require("../middlewares/jwt_middleware");
+const jwtMiddleware = require('../dva-backend/middlewares/jwt_middleware');
 const url = 'mongodb+srv://user:user@cluster.gvlln.mongodb.net/doctor-database?retryWrites=true&w=majority';
 
 const app = express();
