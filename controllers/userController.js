@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken');
 const User = require("../models/userModel");
 const  TOKEN_SECRET = require('../consts').TOKEN_SECRET;
 const  REF_TOKEN_SECRET  = require('../consts').REF_TOKEN_SECRET;
-const tokenExpiration = 15;
+const tokenExpiration = 3600;
 const refreshTokenExpiration = 86400;
 
 function getTokens(user) {
